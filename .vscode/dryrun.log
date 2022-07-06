@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/jakoh/Desktop/so_long'
+mkdir -p ./obj
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/main.c -o obj/main.o
+make -C ./libft
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -lmlx -framework OpenGL -framework AppKit ./obj/main.o -lft -L./libft -o so_long
+make: Leaving directory `/Users/jakoh/Desktop/so_long'
+ 
