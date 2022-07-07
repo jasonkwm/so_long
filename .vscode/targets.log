@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Wed Jul  6 20:09:04 2022
+# Make data base, printed on Thu Jul  7 09:22:45 2022
 
 # Variables
 
@@ -36,9 +37,9 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 8)
-OBJS := ./obj/main.o
+OBJS := ./obj/main.o ./obj/arts.o
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-20148dea-d1c7-43ad-9dd1-0aca1d0a9963.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-201223af-419f-4e41-b7f2-f56d13b9ee5a.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -54,7 +55,7 @@ LIB := -lft -L./libft
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.QW2wEQ6CWw/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.MZq8pBWpRn/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -86,7 +87,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 6)
-SRCS := main.c
+SRCS := main.c arts.c
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 10)
@@ -144,9 +145,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 85447
+VSCODE_PID = 93124
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=3/98=3%
+# Load=67/1024=7%, Rehash=0, Collisions=3/102=3%
 
 # Pattern-specific Variable Values
 
@@ -154,11 +155,11 @@ VSCODE_PID = 85447
 
 # Directories
 
-# . (device 16777228, inode 2246900): 16 files, no impossibilities.
-# ./src (device 16777228, inode 2271164): 3 files, no impossibilities so far.
-# src (device 16777228, inode 2271164): 3 files, no impossibilities so far.
+# . (device 16777228, inode 2246900): 12 files, no impossibilities.
+# ./src (device 16777228, inode 2271164): 4 files, no impossibilities so far.
+# src (device 16777228, inode 2271164): 4 files, no impossibilities so far.
 
-# 22 files, no impossibilities in 3 directories.
+# 20 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -177,18 +178,34 @@ all: so_long
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-07-06 18:44:21
+#  Last modified 2022-07-07 09:07:28
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/main.o
+# automatic
+# % := 
+# automatic
+# * := main
+# automatic
+# + := src/main.c
+# automatic
+# | := 
+# automatic
+# < := src/main.c
+# automatic
+# ^ := src/main.c
+# automatic
+# ? := src/main.c
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
 #  commands to execute (from `Makefile', line 24):
 	mkdir -p ${OBJS_DIR}
 	${CC} -Iincludes -Ilibft -Imlx -c $< -o $@
@@ -203,7 +220,7 @@ obj/main.o: src/main.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-03 15:23:42
+#  Last modified 2022-07-07 09:22:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -221,7 +238,7 @@ fclean: clean
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-06 18:44:18
+#  Last modified 2022-07-07 09:22:19
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -247,20 +264,26 @@ clean:
 	@make clean -C ./libft
 	
 
-so_long: obj/main.o
+# Not a target:
+obj/arts.o:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-06 18:44:21
+#  Modification time never checked.
+#  File has not been updated.
+
+so_long: obj/main.o obj/arts.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-07-07 09:07:29
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 #  commands to execute (from `Makefile', line 20):
 	make -C ./libft
 	${CC} -Iincludes -Ilibft -lmlx -framework OpenGL -framework AppKit ${OBJS} ${LIB} -o $@
 	
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/32=0%
+# Load=11/1024=1%, Rehash=0, Collisions=0/34=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -272,6 +295,6 @@ so_long: obj/main.o
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jul  6 20:09:04 2022
+# Finished Make data base on Thu Jul  7 09:22:45 2022
 
  

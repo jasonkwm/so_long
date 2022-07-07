@@ -3,7 +3,7 @@ NAME := so_long
 SRCS_DIR := ./src
 OBJS_DIR := ./obj
 
-SRCS := main.c
+SRCS := main.c arts.c
 
 OBJS := ${SRCS:%.c=${OBJS_DIR}/%.o}
 
