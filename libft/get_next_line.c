@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 10:05:39 by jakoh             #+#    #+#             */
-/*   Updated: 2022/06/24 11:12:34 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/09 12:09:18 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 // 1. if "str" is empty then "str" = "temp"
 // 2. Append "temp" to "str"
 // 2. Check if there is any \n in "str" starting from "length"
-//
 void	ft_reader(int fd, int rd, char **str, char *temp);
 char	*ft_check_str(char *s);
 

@@ -2,10 +2,13 @@ make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/jakoh/Desktop/so_long'
 mkdir -p ./obj
 gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/main.c -o obj/main.o
- 
 mkdir -p ./obj
-gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/arts.c -o obj/arts.o
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/utils.c -o obj/utils.o
+mkdir -p ./obj
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/check.c -o obj/check.o
+mkdir -p ./obj
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/ending.c -o obj/ending.o
 make -C ./libft
-gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -lmlx -framework OpenGL -framework AppKit ./obj/main.o ./obj/arts.o -lft -L./libft -o so_long
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -lmlx -framework OpenGL -framework AppKit ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check.o ./obj/ending.o ./obj/temp.o -lft -L./libft -o so_long
 make: Leaving directory `/Users/jakoh/Desktop/so_long'
  
