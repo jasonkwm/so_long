@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 09:59:01 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 12:00:19 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/11 16:33:16 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,18 +66,10 @@ void	ft_hero_logic(t_vars *vars, int x, int y)
 	else if (vars->map.grid[vars->hero[0] + y][vars->hero[1] + x] == 'C')
 	{
 		vars->coin_count -= 1;
-		vars->map.grid[vars->hero[0]][vars->hero[1]] = '0';
-		vars->map.grid[vars->hero[0] + y][vars->hero[1] + x] = 'P';
-		vars->hero[0] += y;
-		vars->hero[1] += x;
+		ft_put_hero(vars, x, y);
 	}
 	else if (vars->map.grid[vars->hero[0] + y][vars->hero[1] + x] == '0')
-	{
-		vars->map.grid[vars->hero[0]][vars->hero[1]] = '0';
-		vars->map.grid[vars->hero[0] + y][vars->hero[1] + x] = 'P';
-		vars->hero[0] += y;
-		vars->hero[1] += x;
-	}
+		ft_put_hero(vars, x, y);
 	else if (vars->map.grid[vars->hero[0] + y][vars->hero[1] + x] == 'E')
 	{
 		if (vars->coin_count == 0)
@@ -98,14 +90,8 @@ void	ft_enemy_logic(t_vars *vars, int x, int y)
 	{
 		vars->map.grid[vars->enemy[0]][vars->enemy[1]] = '0';
 		vars->map.grid[vars->enemy[0] + y][vars->enemy[1] + x] = 'L';
-		vars->enemy[0] += y;
-		vars->enemy[1] += x;
+		ft_change_pos(vars, x, y, 'L');
 	}
 	else if (vars->map.grid[vars->enemy[0] + y][vars->enemy[1] + x] == 'C')
-	{
-		vars->map.grid[vars->enemy[0]][vars->enemy[1]] = 'C';
-		vars->map.grid[vars->enemy[0] + y][vars->enemy[1] + x] = 'L';
-		vars->enemy[0] += y;
-		vars->enemy[1] += x;
-	}
+		ft_push_coin(vars, x, y);
 }

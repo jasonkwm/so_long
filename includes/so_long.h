@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:16:47 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 12:00:04 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/11 16:33:13 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,11 @@ void	ft_move_hero(int keycode, t_vars *vars);
 void	ft_move_enemy(int keycode, t_vars *vars);
 void	ft_hero_logic(t_vars *vars, int x, int y);
 void	ft_enemy_logic(t_vars *vars, int x, int y);
+
+// hook_utils.c
+void	ft_put_hero(t_vars *vars, int x, int y);
+void	ft_push_coin(t_vars *vars, int x, int y);
+void	ft_change_pos(t_vars *vars, int x, int y, char c);
 
 // loops.c
 int		ft_animation(t_vars *vars);

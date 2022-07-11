@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Mon Jul 11 11:54:19 2022
+# Make data base, printed on Mon Jul 11 16:31:14 2022
 
 # Variables
 
@@ -37,9 +37,9 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 9)
-OBJS := ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check.o ./obj/exit.o
+OBJS := ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check.o ./obj/hook_utils.o ./obj/exit.o
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-4e698fc8-9945-4898-80f4-750b5f79ad19.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-281249f5-5da2-4a46-812f-8f0ff1d0428d.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -53,10 +53,9 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 15)
 LIB := -lft -L./libft
 # default
- 
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.btPPKIywh3/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.lJaWzRQQz7/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -88,7 +87,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 6)
-SRCS := main.c arts.c hooks.c loops.c maps.c utils.c check.c exit.c
+SRCS := main.c arts.c hooks.c loops.c maps.c utils.c check.c hook_utils.c exit.c
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 11)
@@ -104,6 +103,7 @@ NAME := so_long
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
+ 
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # default
 .VARIABLES := 
@@ -146,7 +146,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 39175
+VSCODE_PID = 41932
 # variable set hash-table stats:
 # Load=67/1024=7%, Rehash=0, Collisions=3/102=3%
 
@@ -156,11 +156,11 @@ VSCODE_PID = 39175
 
 # Directories
 
-# . (device 16777228, inode 2246900): 15 files, no impossibilities.
-# ./src (device 16777228, inode 2271164): 8 files, no impossibilities so far.
-# src (device 16777228, inode 2271164): 8 files, no impossibilities so far.
+# . (device 16777228, inode 2246900): 14 files, no impossibilities.
+# ./src (device 16777228, inode 2271164): 9 files, no impossibilities so far.
+# src (device 16777228, inode 2271164): 9 files, no impossibilities so far.
 
-# 31 files, no impossibilities in 3 directories.
+# 32 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -183,36 +183,43 @@ all: so_long
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
-# Not a target:
-obj/hooks.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/hooks.o: src/hooks.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `hooks'
+#  Last modified 2022-07-11 16:25:19
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/hooks.o
+# automatic
+# % := 
+# automatic
+# * := hooks
+# automatic
+# + := src/hooks.c
+# automatic
+# | := 
+# automatic
+# < := src/hooks.c
+# automatic
+# ^ := src/hooks.c
+# automatic
+# ? := src/hooks.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  commands to execute (from `Makefile', line 25):
+	mkdir -p ${OBJS_DIR}
+	${CC} -Iincludes -Ilibft -Imlx -c $< -o $@
+	
 
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-07-11 11:16:20
+#  Last modified 2022-07-11 16:25:19
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/main.o
-# automatic
-# % := 
-# automatic
-# * := main
-# automatic
-# + := src/main.c
-# automatic
-# | := 
-# automatic
-# < := src/main.c
-# automatic
-# ^ := src/main.c
-# automatic
-# ? := src/main.c
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 25):
 	mkdir -p ${OBJS_DIR}
 	${CC} -Iincludes -Ilibft -Imlx -c $< -o $@
@@ -225,10 +232,19 @@ obj/main.o: src/main.c
 #  File has not been updated.
 
 # Not a target:
- 
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-11 11:54:02
+#  Last modified 2022-07-11 16:31:14
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/hooks.c:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-07-11 16:30:23
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -246,7 +262,7 @@ fclean: clean
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-11 11:50:26
+#  Last modified 2022-07-11 12:01:01
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -290,11 +306,18 @@ obj/check.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-obj/arts.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/arts.o: src/arts.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `arts'
+#  Last modified 2022-07-11 16:25:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 25):
+	mkdir -p ${OBJS_DIR}
+	${CC} -Iincludes -Ilibft -Imlx -c $< -o $@
+	
 
 # Not a target:
 obj/maps.o:
@@ -302,9 +325,9 @@ obj/maps.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-so_long: obj/main.o obj/arts.o obj/hooks.o obj/loops.o obj/maps.o obj/utils.o obj/check.o obj/exit.o
+so_long: obj/main.o obj/arts.o obj/hooks.o obj/loops.o obj/maps.o obj/utils.o obj/check.o obj/hook_utils.o obj/exit.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-11 11:18:39
+#  Last modified 2022-07-11 16:25:21
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -320,8 +343,23 @@ obj/exit.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+obj/hook_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/arts.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-09 11:49:56
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/46=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/56=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -333,6 +371,6 @@ obj/exit.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Jul 11 11:54:19 2022
+# Finished Make data base on Mon Jul 11 16:31:14 2022
 
  
