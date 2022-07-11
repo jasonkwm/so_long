@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:18:19 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 12:01:01 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/11 17:08:53 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	ft_mini_main(t_vars *vars)
 	ft_assign_art(vars);
 	ft_print_base(vars);
 	mlx_loop_hook(vars->mlx, &ft_animation, vars);
-	mlx_key_hook(vars->win, key_hook, vars);
+	mlx_hook(vars->win, 2, 2, key_hook, vars);
 	mlx_loop(vars->mlx);
 }
