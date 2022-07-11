@@ -3,8 +3,8 @@ NAME := so_long
 SRCS_DIR := ./src
 OBJS_DIR := ./obj
 
-SRCS := main.c arts.c hooks.c loops.c maps.c utils.c check.c ending.c\
-		temp.c
+SRCS := main.c arts.c hooks.c loops.c maps.c \
+		utils.c check.c exit.c
 
 OBJS := ${SRCS:%.c=${OBJS_DIR}/%.o}
 

@@ -2,6 +2,9 @@
 	"makefile.extensionOutputFolder": "./.vscode",
 	"files.associations": {
 		"stdlib.h": "c",
-		"mlx.h": "c"
+		"mlx.h": "c",
+		"so_long.h": "c",
+		"chrono": "c",
+		"unordered_map": "c"
 	}
 }

@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun Jul 10 20:16:59 2022
+# Make data base, printed on Mon Jul 11 11:54:19 2022
 
 # Variables
 
@@ -37,9 +37,9 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 9)
-OBJS := ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check.o ./obj/ending.o ./obj/temp.o
+OBJS := ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check.o ./obj/exit.o
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-6b152dac-b26c-4a73-aaf9-3f7d3e1db5ac.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-4e698fc8-9945-4898-80f4-750b5f79ad19.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -53,9 +53,10 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 15)
 LIB := -lft -L./libft
 # default
+ 
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.gGxgZPJZhw/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.btPPKIywh3/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -87,7 +88,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 6)
-SRCS := main.c arts.c hooks.c loops.c maps.c utils.c check.c ending.c temp.c
+SRCS := main.c arts.c hooks.c loops.c maps.c utils.c check.c exit.c
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 11)
@@ -145,7 +146,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 89413
+VSCODE_PID = 39175
 # variable set hash-table stats:
 # Load=67/1024=7%, Rehash=0, Collisions=3/102=3%
 
@@ -173,12 +174,6 @@ obj/%.o: ./src/%.c
 
 # Files
 
-# Not a target:
-obj/temp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 all: so_long
 #  Command-line target.
 #  Implicit rule search has been done.
@@ -197,7 +192,7 @@ obj/hooks.o:
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-07-10 20:10:21
+#  Last modified 2022-07-11 11:16:20
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -230,9 +225,10 @@ obj/main.o: src/main.c
 #  File has not been updated.
 
 # Not a target:
+ 
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-10 20:16:57
+#  Last modified 2022-07-11 11:54:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -248,15 +244,9 @@ fclean: clean
 	
 
 # Not a target:
-obj/ending.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-10 20:14:51
+#  Last modified 2022-07-11 11:50:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -312,9 +302,9 @@ obj/maps.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-so_long: obj/main.o obj/arts.o obj/hooks.o obj/loops.o obj/maps.o obj/utils.o obj/check.o obj/ending.o obj/temp.o
+so_long: obj/main.o obj/arts.o obj/hooks.o obj/loops.o obj/maps.o obj/utils.o obj/check.o obj/exit.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-10 20:10:22
+#  Last modified 2022-07-11 11:18:39
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -324,20 +314,25 @@ so_long: obj/main.o obj/arts.o obj/hooks.o obj/loops.o obj/maps.o obj/utils.o ob
 	${CC} -Iincludes -Ilibft -lmlx -framework OpenGL -framework AppKit ${OBJS} ${LIB} -o $@
 	
 
+# Not a target:
+obj/exit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=0/48=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
- 
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Jul 10 20:16:59 2022
+# Finished Make data base on Mon Jul 11 11:54:19 2022
 
  

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ending.c                                           :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 20:15:51 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/10 20:17:00 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/11 12:01:42 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@
 void	ft_exit_err(char *message, int err)
 {
 	ft_putstr_fd(message, 2);
-	system("leaks so_long");
 	exit(err);
 }
 
 // Exit program and destroy window
 // use when user press ESC key
-void	ft_exit_program(t_vars *vars)
+void	ft_exit_program(t_vars *vars, char *msg)
 {
 	mlx_destroy_window(vars->mlx, vars->win);
-	ft_exit_err("K Bye.\n", 3);
+	ft_exit_err(msg, 3);
 }
 
 // Just like freeing ft_split
