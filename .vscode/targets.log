@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Mon Jul 11 16:31:14 2022
+# Make data base, printed on Tue Jul 12 12:16:50 2022
 
 # Variables
 
@@ -39,7 +38,7 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 9)
 OBJS := ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check.o ./obj/hook_utils.o ./obj/exit.o
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-281249f5-5da2-4a46-812f-8f0ff1d0428d.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc1r00330f/T/vscode-ipc-15636be4-b437-432d-ad0e-a9377ea78778.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -55,7 +54,7 @@ LIB := -lft -L./libft
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.lJaWzRQQz7/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.AkSIHm3Plk/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -103,7 +102,6 @@ NAME := so_long
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
- 
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # default
 .VARIABLES := 
@@ -146,7 +144,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 41932
+VSCODE_PID = 77660
 # variable set hash-table stats:
 # Load=67/1024=7%, Rehash=0, Collisions=3/102=3%
 
@@ -156,11 +154,11 @@ VSCODE_PID = 41932
 
 # Directories
 
-# . (device 16777228, inode 2246900): 14 files, no impossibilities.
+# . (device 16777228, inode 2246900): 13 files, no impossibilities.
 # ./src (device 16777228, inode 2271164): 9 files, no impossibilities so far.
 # src (device 16777228, inode 2271164): 9 files, no impossibilities so far.
 
-# 32 files, no impossibilities in 3 directories.
+# 31 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -183,43 +181,36 @@ all: so_long
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
-obj/hooks.o: src/hooks.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `hooks'
-#  Last modified 2022-07-11 16:25:19
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := obj/hooks.o
-# automatic
-# % := 
-# automatic
-# * := hooks
-# automatic
-# + := src/hooks.c
-# automatic
-# | := 
-# automatic
-# < := src/hooks.c
-# automatic
-# ^ := src/hooks.c
-# automatic
-# ? := src/hooks.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
-#  commands to execute (from `Makefile', line 25):
-	mkdir -p ${OBJS_DIR}
-	${CC} -Iincludes -Ilibft -Imlx -c $< -o $@
-	
+# Not a target:
+obj/hooks.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 obj/main.o: src/main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-07-11 16:25:19
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := obj/main.o
+# automatic
+# % := 
+# automatic
+# * := main
+# automatic
+# + := src/main.c
+# automatic
+# | := 
+# automatic
+# < := src/main.c
+# automatic
+# ^ := src/main.c
+# automatic
+# ? := src/main.c
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
 #  commands to execute (from `Makefile', line 25):
 	mkdir -p ${OBJS_DIR}
 	${CC} -Iincludes -Ilibft -Imlx -c $< -o $@
@@ -240,16 +231,6 @@ Makefile:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-src/hooks.c:
-#  Implicit rule search has been done.
- 
-#  Last modified 2022-07-11 16:30:23
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
 fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -262,7 +243,7 @@ fclean: clean
 # Not a target:
 src/main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-11 12:01:01
+#  Last modified 2022-07-11 17:08:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -306,18 +287,11 @@ obj/check.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/arts.o: src/arts.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `arts'
-#  Last modified 2022-07-11 16:25:19
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 25):
-	mkdir -p ${OBJS_DIR}
-	${CC} -Iincludes -Ilibft -Imlx -c $< -o $@
-	
+# Not a target:
+obj/arts.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 obj/maps.o:
@@ -327,7 +301,7 @@ obj/maps.o:
 
 so_long: obj/main.o obj/arts.o obj/hooks.o obj/loops.o obj/maps.o obj/utils.o obj/check.o obj/hook_utils.o obj/exit.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-11 16:25:21
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -345,21 +319,13 @@ obj/exit.o:
 
 # Not a target:
 obj/hook_utils.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/arts.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-09 11:49:56
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/56=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/48=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -371,6 +337,6 @@ src/arts.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Jul 11 16:31:14 2022
+# Finished Make data base on Tue Jul 12 12:16:50 2022
 
  

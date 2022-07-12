@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:29:14 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 16:31:53 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 12:37:17 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,28 @@ void	ft_push_coin(t_vars *vars, int x, int y)
 		i++;
 	if (vars->map.grid[vars->enemy[0] + (y * i)]
 		[vars->enemy[1] + (x * i)] == '0')
-	{
-		vars->map.grid[vars->enemy[0]][vars->enemy[1]] = '0';
-		vars->map.grid[vars->enemy[0] + (y * i)]
-		[vars->enemy[1] + (x * i)] = 'C';
-		vars->map.grid[vars->enemy[0] + y][vars->enemy[1] + x] = 'L';
-		ft_change_pos(vars, x, y, 'L');
-	}
-	if (vars->map.grid[vars->enemy[0] + (y * i)]
+		ft_push_coin_jr(vars, x, y, i);
+	else if (vars->map.grid[vars->enemy[0] + (y * i)]
 		[vars->enemy[1] + (x * i)] == 'P')
-	{
-		vars->coin_count -= 1;
-		vars->map.grid[vars->enemy[0]][vars->enemy[1]] = '0';
-		vars->map.grid[vars->enemy[0] + y][vars->enemy[1] + x] = 'L';
-		ft_change_pos(vars, x, y, 'L');
-	}
+		ft_push_coin_helper(vars, x, y, '0');
+	else
+		ft_push_coin_helper(vars, x, y, 'C');
+}
+
+// Logic to push multiple coins
+void	ft_push_coin_jr(t_vars *vars, int x, int y, int i)
+{
+	vars->map.grid[vars->enemy[0]][vars->enemy[1]] = '0';
+	vars->map.grid[vars->enemy[0] + (y * i)]
+	[vars->enemy[1] + (x * i)] = 'C';
+	vars->map.grid[vars->enemy[0] + y][vars->enemy[1] + x] = 'L';
+	ft_change_pos(vars, x, y, 'L');
+}
+
+// change enemy position
+void	ft_push_coin_helper(t_vars *vars, int x, int y, char c)
+{
+	vars->map.grid[vars->enemy[0]][vars->enemy[1]] = c;
+	vars->map.grid[vars->enemy[0] + y][vars->enemy[1] + x] = 'L';
+	ft_change_pos(vars, x, y, 'L');
 }
