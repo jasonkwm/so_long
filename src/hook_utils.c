@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:29:14 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/12 14:10:58 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:33:38 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void	ft_push_coin(t_vars *vars, int x, int y)
 		ft_push_coin_jr(vars, x, y, i);
 	else if (vars->map.grid[vars->enemy[0] + (y * i)]
 		[vars->enemy[1] + (x * i)] == 'P')
+	{
 		ft_push_coin_helper(vars, x, y, '0');
+		vars->coin_count -= 1;
+	}
 	else
 		ft_push_coin_helper(vars, x, y, 'C');
 }
