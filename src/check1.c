@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:41:15 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/12 14:17:56 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:18:41 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_check_grid(t_vars *vars)
 	if (vars->map.width == 0 || vars->map.height == 0)
 	{
 		ft_free_map(vars->map.grid);
-		ft_exit_err("Improper Map Size.\n", 4);
+		ft_exit_err("Improper Map.\n", 4);
 	}
 }
 
