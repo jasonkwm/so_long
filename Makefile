@@ -4,7 +4,7 @@ SRCS_DIR := ./src
 OBJS_DIR := ./obj
 
 SRCS := main.c arts.c hooks.c loops.c maps.c \
-		utils.c check1.c check2.c hook_utils.c exit.c
+		utils.c check.c hook_utils.c exit.c
 
 OBJS := ${SRCS:%.c=${OBJS_DIR}/%.o}
 
