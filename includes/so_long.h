@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:16:47 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/12 12:35:28 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:09:18 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,12 @@ typedef struct s_vars
 
 // main.c
 void	ft_init(t_vars *vars);
+void	ft_check_nl(t_vars *vars);
 void	ft_mini_main(t_vars *vars);
 
 // exit.c
 void	ft_free_map(char **str);
+int		ft_exit_on_click(t_vars *vars);
 void	ft_exit_err(char *message, int err);
 void	ft_exit_program(t_vars *vars, char *msg);
 

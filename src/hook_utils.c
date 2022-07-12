@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:29:14 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/12 12:37:17 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:10:58 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_change_pos(t_vars *vars, int x, int y, char c)
 	{
 		vars->hero[0] += y;
 		vars->hero[1] += x;
+		vars->move_count += 1;
 	}
 	if (c == 'L')
 	{

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   check1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:41:15 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 11:59:52 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:17:56 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ void	ft_check_grid(t_vars *vars)
 		}
 	}
 	vars->map.height = i;
+	if (vars->map.width == 0 || vars->map.height == 0)
+	{
+		ft_free_map(vars->map.grid);
+		ft_exit_err("Improper Map Size.\n", 4);
+	}
 }
 
 // Check if number of character is correct
@@ -85,4 +90,17 @@ void	ft_check_unwanted(t_vars *vars, int i, int j)
 		ft_free_map(vars->map.grid);
 		ft_exit_err("Unwanted Character in Map.\n", 5);
 	}
+}
+
+// check if map ends with newline and non '\0'
+void	ft_check_nl(t_vars *vars)
+{
+	char	*line;
+	int		i;
+
+	i = -1;
+	while (vars->map.grid[++i] != NULL)
+		line = vars->map.grid[i];
+	if (line[ft_strlen(line) - 1] == '\n')
+		ft_exit_err("Found newline at end \n", 10);
 }

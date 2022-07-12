@@ -1,7 +1,8 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/jakoh/Desktop/so_long'
 mkdir -p ./obj
 gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/main.c -o obj/main.o
+ 
 mkdir -p ./obj
 gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/arts.c -o obj/arts.o
 mkdir -p ./obj
@@ -13,12 +14,15 @@ gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/maps.c -o obj/maps.o
 mkdir -p ./obj
 gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/utils.c -o obj/utils.o
 mkdir -p ./obj
-gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/check.c -o obj/check.o
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/check1.c -o obj/check1.o
+ 
+mkdir -p ./obj
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/check2.c -o obj/check2.o
 mkdir -p ./obj
 gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/hook_utils.c -o obj/hook_utils.o
 mkdir -p ./obj
 gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -Imlx -c src/exit.c -o obj/exit.o
 make -C ./libft
-gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -lmlx -framework OpenGL -framework AppKit ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check.o ./obj/hook_utils.o ./obj/exit.o -lft -L./libft -o so_long
+gcc -Wall -Werror -Wextra  -Iincludes -Ilibft -lmlx -framework OpenGL -framework AppKit ./obj/main.o ./obj/arts.o ./obj/hooks.o ./obj/loops.o ./obj/maps.o ./obj/utils.o ./obj/check1.o ./obj/check2.o ./obj/hook_utils.o ./obj/exit.o -lft -L./libft -o so_long
 make: Leaving directory `/Users/jakoh/Desktop/so_long'
  

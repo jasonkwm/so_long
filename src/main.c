@@ -6,13 +6,11 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:18:19 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 17:08:53 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:11:30 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_mini_main(t_vars *vars);
 
 int	main(int ac, char **av)
 {
@@ -52,5 +50,6 @@ void	ft_mini_main(t_vars *vars)
 	ft_print_base(vars);
 	mlx_loop_hook(vars->mlx, &ft_animation, vars);
 	mlx_hook(vars->win, 2, 2, key_hook, vars);
+	mlx_hook(vars->win, 17, (1L << 0), ft_exit_on_click, vars);
 	mlx_loop(vars->mlx);
 }

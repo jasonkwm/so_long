@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 09:59:01 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 16:33:16 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:10:47 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ int	key_hook(int keycode, t_vars *vars)
 	if (keycode == 53 && ++(vars->move_count))
 		ft_exit_program(vars, "K Bye.\n");
 	if (keycode == 0 || keycode == 2 || keycode == 1 || keycode == 13)
-	{
 		ft_move_hero(keycode, vars);
-		vars->move_count += 1;
-	}
 	if (keycode == 126 || keycode == 125 || keycode == 124 || keycode == 123)
 		ft_move_enemy(keycode, vars);
 	return (0);

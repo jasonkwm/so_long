@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 20:15:51 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/11 12:01:42 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:16:22 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,11 @@ void	ft_free_map(char **str)
 	while (str[++i] != NULL)
 		free(str[i]);
 	free(str);
+}
+
+// exit game when player click on X button
+int	ft_exit_on_click(t_vars *vars)
+{
+	ft_exit_program(vars, "K Bye.");
+	return (1);
 }
