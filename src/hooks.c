@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 09:59:01 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/12 14:35:33 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/18 16:22:17 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	ft_move_hero(int keycode, t_vars *vars)
 // the int variable in hero logic accept x and y changes
 void	ft_move_enemy(int keycode, t_vars *vars)
 {
+	if (vars->enemy[0] == 0 && vars->enemy[1] == 0)
+		return ;
 	if (keycode == 126)
 		ft_enemy_logic(vars, 0, -1);
 	if (keycode == 123)

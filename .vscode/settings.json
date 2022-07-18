@@ -5,6 +5,7 @@
 		"mlx.h": "c",
 		"so_long.h": "c",
 		"chrono": "c",
-		"unordered_map": "c"
+		"unordered_map": "c",
+		"fcntl.h": "c"
 	}
 }

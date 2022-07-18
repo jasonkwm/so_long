@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:18:19 by jakoh             #+#    #+#             */
-/*   Updated: 2022/07/12 14:11:30 by jakoh            ###   ########.fr       */
+/*   Updated: 2022/07/18 16:21:01 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	ft_init(t_vars *vars)
 	vars->map.height = 0;
 	vars->map.width = 0;
 	vars->coin_count = 0;
+	vars->enemy[0] = 0;
+	vars->enemy[1] = 0;
 	ft_check_grid(vars);
 	ft_check_char(vars);
 	ft_loop_map(vars, &ft_check_boundary);
