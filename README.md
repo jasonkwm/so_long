@@ -21,7 +21,7 @@ The only requirements are:
 
 1. Download/Clone this repo
 
-        git clone https://github.com/jasonkwm/so_long.git
+        git clone https://github.com/jasonkwm/so_long.git so_long
 2. `cd` into the root directory and run `make`
 
         cd so_long
