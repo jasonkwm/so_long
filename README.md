@@ -2,7 +2,7 @@
 
 This project is a very small 2D game. Its purpose is to make you work with textures, sprites, and some other very basic gameplay elements.
 
-![VN20221108_095517 (5)](https://user-images.githubusercontent.com/32697686/200458223-0f2fdbad-d103-4947-823e-86401276a922.gif)
+![Screen Recording 2022-11-08 at 1 51 31 PM](https://user-images.githubusercontent.com/32697686/200486320-35c01381-561b-4b87-9bcf-46eab28490c8.gif)
 
 ## About
 
